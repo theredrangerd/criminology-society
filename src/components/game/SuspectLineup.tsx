@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { EvidenceCard } from '../EvidenceCard';
 import { GameIdle } from './GameIdle';
@@ -6,6 +6,8 @@ import { CaseBriefing } from './CaseBriefing';
 import { SuspectCard } from './SuspectCard';
 import { VerdictBanner } from './VerdictBanner';
 import { BiasBarChart } from './BiasBarChart';
+import { CountdownBar } from './CountdownBar';
+import { audio } from '../../utils/audio';
 import {
   SUSPECTS,
   type GamePhase,
@@ -18,14 +20,41 @@ export const SuspectLineup: React.FC = () => {
   const [phase, setPhase] = useState<GamePhase>('idle');
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [votes, setVotes] = useState<Record<number, number>>(loadVotes);
+  const [timeLeft, setTimeLeft] = useState(15);
+  const [timerExpired, setTimerExpired] = useState(false);
 
   // ── State transitions ────────────────────────────────────────────────────
   const handleStart = useCallback(() => setPhase('briefing'), []);
-  const handleReady = useCallback(() => setPhase('lineup'), []);
+  const handleReady = useCallback(() => {
+    setPhase('lineup');
+    setTimeLeft(15);
+    setTimerExpired(false);
+  }, []);
+
+  // Countdown tick — stops at 0 and fires alarm; stays on lineup until selection
+  useEffect(() => {
+    if (phase !== 'lineup') {
+      audio.stopAlarm();
+      return;
+    }
+    if (timeLeft <= 0) {
+      if (!timerExpired) {
+        setTimerExpired(true);
+        audio.startAlarm();
+      }
+      return;
+    }
+    const tick = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
+    return () => clearTimeout(tick);
+  }, [phase, timeLeft, timerExpired]);
+
+  // Cleanup alarm if component unmounts mid-game
+  useEffect(() => () => { audio.stopAlarm(); }, []);
 
   const handleSelectSuspect = useCallback(
     (id: number) => {
       if (phase !== 'lineup') return;
+      audio.stopAlarm();
       const updated = incrementVote(votes, id);
       setVotes(updated);
       setSelectedId(id);
@@ -101,6 +130,8 @@ export const SuspectLineup: React.FC = () => {
                     : '✓ Verdict recorded'}
                 </span>
               </div>
+
+              {phase === 'lineup' && <CountdownBar timeLeft={timeLeft} expired={timerExpired} />}
 
               {/* 5-card grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">

@@ -3,6 +3,7 @@
 class AudioEngine {
   private ctx: AudioContext | null = null;
   private isMuted: boolean = false;
+  private alarmInterval: ReturnType<typeof setInterval> | null = null;
 
   constructor() {
     // AudioContext will be initialized on first user interaction to comply with browser autoplay policies
@@ -105,6 +106,43 @@ class AudioEngine {
   }
 
   // ── Minigame Verdict Sounds ────────────────────────────────────────────
+
+  // Alarm: repeating two-tone siren until stopped
+  private playAlarmBlip() {
+    if (!this.ctx) return;
+    [880, 620].forEach((freq, i) => {
+      if (!this.ctx) return;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime + i * 0.16);
+      gain.gain.setValueAtTime(0.07, this.ctx.currentTime + i * 0.16);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + i * 0.16 + 0.14);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(this.ctx.currentTime + i * 0.16);
+      osc.stop(this.ctx.currentTime + i * 0.16 + 0.14);
+    });
+  }
+
+  public startAlarm() {
+    this.stopAlarm();
+    if (this.isMuted) return;
+    this.initCtx();
+    this.playAlarmBlip();
+    this.alarmInterval = setInterval(() => {
+      if (this.isMuted) return;
+      this.initCtx();
+      this.playAlarmBlip();
+    }, 600);
+  }
+
+  public stopAlarm() {
+    if (this.alarmInterval !== null) {
+      clearInterval(this.alarmInterval);
+      this.alarmInterval = null;
+    }
+  }
 
   // Triumphant arpeggio for correct suspect identification (Case Solved)
   public playVerdictChime() {
