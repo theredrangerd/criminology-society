@@ -37,20 +37,20 @@ export const HeroMasthead: React.FC = () => {
       </div>
 
       {/* Primary Masthead Title with Embedded Fingerprint Glyphs */}
-      <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wider text-[#9e232f] uppercase select-none leading-none drop-shadow-[0_4px_16px_rgba(158,35,47,0.35)]">
+      <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider text-[#9e232f] uppercase select-none leading-none drop-shadow-[0_4px_16px_rgba(158,35,47,0.35)] break-words">
         {/* CRIMINOLOGY */}
-        <span className="inline-flex items-center">
+        <span className="inline-flex items-center flex-wrap justify-center">
           CRIMIN
-          <BiometricGlyph size={44} className="mx-1 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+          <BiometricGlyph />
           L
-          <BiometricGlyph size={44} className="mx-1 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+          <BiometricGlyph />
           GY
         </span>
         <br />
         {/* SOCIETY */}
-        <span className="inline-flex items-center mt-1 text-[#eedec9]">
+        <span className="inline-flex items-center mt-1.5 text-[#eedec9] flex-wrap justify-center">
           S
-          <BiometricGlyph size={44} className="mx-1 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+          <BiometricGlyph />
           CIETY
         </span>
       </h1>

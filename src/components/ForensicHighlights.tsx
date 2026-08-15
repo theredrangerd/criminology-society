@@ -7,23 +7,23 @@ export const ForensicHighlights: React.FC = () => {
     <EvidenceCard 
       tapeText="CURRICULUM // PILLARS" 
       tapeAngle={0.9}
-      badgeLabel="INVESTIGATION FOCUS"
     >
       <div className="flex flex-col justify-between h-full space-y-4">
-        <div className="border-b border-[#7e1923]/20 pb-3 flex items-center justify-between">
+        {/* Header */}
+        <div className="border-b border-[#7e1923]/20 pb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Scale className="w-5 h-5 text-[#7e1923]" />
-            <h2 className="font-editorial text-2xl font-bold text-[#7e1923] tracking-wide">
+            <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#7e1923] tracking-wide">
               What We Explore
             </h2>
           </div>
-          <span className="rubber-stamp text-[10px] border-[#7e1923] text-[#7e1923]">
-            INTERDISCIPLINARY
+          <span className="font-mono text-[10px] text-[#7e1923] uppercase font-bold border border-[#7e1923]/40 px-2 py-0.5 rounded bg-[#7e1923]/10">
+            PILLARS
           </span>
         </div>
 
-        <p className="font-body text-xs md:text-sm text-[#4f131a]">
-          Bridging social science and forensic deduction through active analysis:
+        <p className="font-body text-xs sm:text-sm text-[#4f131a]">
+          Bridging social science and forensic deduction through active case analysis:
         </p>
 
         {/* 4 Core Pillars */}
@@ -32,7 +32,7 @@ export const ForensicHighlights: React.FC = () => {
             <Compass className="w-4 h-4 text-[#7e1923] shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-xs font-bold text-[#7e1923] block">Criminal Profiling</span>
-              <span className="text-[11px] text-[#4f131a] leading-tight block">Motive, psychopathy & behavior patterns</span>
+              <span className="text-[11px] text-[#4f131a] leading-tight block">Motive & psychopathy patterns</span>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ export const ForensicHighlights: React.FC = () => {
             <Dna className="w-4 h-4 text-[#7e1923] shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-xs font-bold text-[#7e1923] block">Forensic Science</span>
-              <span className="text-[11px] text-[#4f131a] leading-tight block">Biometrics, ballistics & evidence chain</span>
+              <span className="text-[11px] text-[#4f131a] leading-tight block">Biometrics & evidence chains</span>
             </div>
           </div>
 
@@ -48,7 +48,7 @@ export const ForensicHighlights: React.FC = () => {
             <Scale className="w-4 h-4 text-[#7e1923] shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-xs font-bold text-[#7e1923] block">Law & Society</span>
-              <span className="text-[11px] text-[#4f131a] leading-tight block">Justice systems & social impact</span>
+              <span className="text-[11px] text-[#4f131a] leading-tight block">Justice systems & ethics</span>
             </div>
           </div>
 
@@ -56,13 +56,13 @@ export const ForensicHighlights: React.FC = () => {
             <FileSearch className="w-4 h-4 text-[#7e1923] shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-xs font-bold text-[#7e1923] block">Mock Trials & Games</span>
-              <span className="text-[11px] text-[#4f131a] leading-tight block">Hands-on case deduction challenges</span>
+              <span className="text-[11px] text-[#4f131a] leading-tight block">Hands-on case challenges</span>
             </div>
           </div>
         </div>
 
-        <div className="p-2.5 rounded-lg bg-[#eedec9]/30 border border-[#eedec9] text-center">
-          <span className="font-mono text-[11px] text-[#733139] uppercase font-semibold">
+        <div className="p-2 rounded-lg bg-[#eedec9]/30 border border-[#eedec9] text-center">
+          <span className="font-mono text-[10px] sm:text-[11px] text-[#733139] uppercase font-semibold">
             ✦ Perfect for Law, Finance, STEM, and Psychology ✦
           </span>
         </div>

@@ -3,14 +3,13 @@ import { motion } from 'framer-motion';
 
 interface BiometricGlyphProps {
   className?: string;
-  size?: number;
+  size?: number | string;
 }
 
-export const BiometricGlyph: React.FC<BiometricGlyphProps> = ({ className = '', size = 36 }) => {
+export const BiometricGlyph: React.FC<BiometricGlyphProps> = ({ className = '' }) => {
   return (
     <span 
-      className={`inline-flex items-center justify-center relative align-middle overflow-hidden rounded-full ${className}`}
-      style={{ width: size, height: size }}
+      className={`inline-flex items-center justify-center relative align-middle overflow-hidden rounded-full w-[0.82em] h-[0.82em] mx-[0.04em] shrink-0 ${className}`}
     >
       {/* Biometric Fingerprint SVG Pattern */}
       <svg 

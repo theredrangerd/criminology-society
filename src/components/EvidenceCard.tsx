@@ -7,7 +7,6 @@ interface EvidenceCardProps {
   className?: string;
   tapeAngle?: number;
   tapeText?: string;
-  badgeLabel?: string;
   hasTape?: boolean;
 }
 
@@ -16,7 +15,6 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
   className = '',
   tapeAngle = -1.2,
   tapeText,
-  badgeLabel,
   hasTape = true,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -27,10 +25,10 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
 
   // Smooth springs for 3D physics
   const springConfig = { damping: 20, stiffness: 260, mass: 0.6 };
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), springConfig);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [5, -5]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-5, 5]), springConfig);
   
-  // Specular sheen gradient opacity and position
+  // Specular sheen gradient position
   const sheenX = useTransform(mouseX, [-0.5, 0.5], ['0%', '100%']);
   const sheenY = useTransform(mouseY, [-0.5, 0.5], ['0%', '100%']);
 
@@ -62,29 +60,22 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
-      whileHover={{ scale: 1.015, y: -4 }}
+      whileHover={{ scale: 1.012, y: -4 }}
       transition={{ type: 'spring', stiffness: 350, damping: 25 }}
       style={{
         rotateX,
         rotateY,
         transformPerspective: 1000,
       }}
-      className={`evidence-card-3d w-full h-full relative p-6 md:p-8 flex flex-col justify-between cursor-pointer select-none ${className}`}
+      className={`evidence-card-3d w-full h-full relative pt-7 pb-6 px-5 sm:px-7 md:px-8 flex flex-col justify-between select-none ${className}`}
     >
       {/* Kraft Masking Tape Pin on Top */}
       {hasTape && (
         <div 
-          className="kraft-tape flex items-center justify-center font-mono text-[10px] tracking-widest text-[#5a442e] uppercase font-bold"
+          className="kraft-tape flex items-center justify-center font-mono text-[9px] sm:text-[10px] tracking-widest text-[#5a442e] uppercase font-bold"
           style={{ transform: `translateX(-50%) rotate(${tapeAngle}deg)` }}
         >
           {tapeText || 'EVIDENCE // CRIMSOC'}
-        </div>
-      )}
-
-      {/* Case Badge if provided */}
-      {badgeLabel && (
-        <div className="absolute top-4 right-4 font-mono text-[10px] tracking-wider uppercase text-[#7e1923] border border-[#7e1923]/30 px-2 py-0.5 rounded bg-[#eedec9]/40">
-          {badgeLabel}
         </div>
       )}
 
@@ -97,7 +88,7 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
       />
 
       {/* Inner Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         {children}
       </div>
     </motion.div>

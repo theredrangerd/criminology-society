@@ -35,27 +35,27 @@ export const OfficerContacts: React.FC = () => {
     <EvidenceCard 
       tapeText="EVIDENCE // LEAD CONTACTS" 
       tapeAngle={-0.8}
-      badgeLabel="OFFICER ROSTER"
     >
       <div className="space-y-4">
-        <div className="border-b border-[#7e1923]/20 pb-3 flex items-center justify-between">
+        {/* Header */}
+        <div className="border-b border-[#7e1923]/20 pb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Shield className="w-5 h-5 text-[#7e1923]" />
-            <h2 className="font-editorial text-2xl font-bold text-[#7e1923] tracking-wide">
+            <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#7e1923] tracking-wide">
               Lead Officer Contacts
             </h2>
           </div>
-          <span className="font-mono text-xs text-[#733139] uppercase">
-            CLICK TO COPY EMAIL
+          <span className="font-mono text-[10px] text-[#7e1923] uppercase font-bold border border-[#7e1923]/40 px-2 py-0.5 rounded bg-[#7e1923]/10">
+            OFFICER ROSTER • TAP TO COPY
           </span>
         </div>
 
-        <p className="font-body text-[#4f131a] text-sm">
-          Have questions regarding meeting agendas, case analyses, or joining the committee? Reach out directly to any of the student leads:
+        <p className="font-body text-[#4f131a] text-xs sm:text-sm">
+          Have questions regarding meeting agendas, case analyses, or joining the committee? Reach out directly to any student lead:
         </p>
 
         {/* 5 Officers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
           {OFFICERS.map((officer) => {
             const isCopied = copiedId === officer.id;
             return (
@@ -72,7 +72,7 @@ export const OfficerContacts: React.FC = () => {
                       <span className="font-mono text-[10px] text-[#7e1923] font-bold uppercase">{officer.badge}</span>
                       <span className="text-xs font-semibold text-[#4f131a]">{officer.role}</span>
                     </div>
-                    <span className="font-mono text-xs text-[#733139] block truncate">
+                    <span className="font-mono text-[11px] sm:text-xs text-[#733139] block truncate">
                       {officer.email}
                     </span>
                   </div>

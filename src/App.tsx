@@ -45,7 +45,7 @@ export const App: React.FC = () => {
       <AttractMode />
 
       {/* Main Investigation Board Canvas */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 relative z-10 flex flex-col items-center">
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative z-10 flex flex-col items-center">
         {/* Hero Masthead with Biometric Typography & Rubber Stamp */}
         <HeroMasthead />
 
@@ -54,30 +54,30 @@ export const App: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="bento-board w-full mt-8"
+          className="bento-board w-full mt-6"
         >
           {/* Bento Tile 1: Case Brief (What is CrimSoc?) - 7 Cols */}
-          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-7 flex">
+          <motion.div variants={itemVariants} className="bento-7 flex w-full">
             <WhatIsCrimSoc />
           </motion.div>
 
           {/* Bento Tile 2: Weekly Logistics - 5 Cols */}
-          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-5 flex">
+          <motion.div variants={itemVariants} className="bento-5 flex w-full">
             <LogisticsBadge />
           </motion.div>
 
           {/* Bento Tile 3: Suspect Lineup Mini-Game Slot - 7 Cols */}
-          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-7 flex">
+          <motion.div variants={itemVariants} className="bento-7 flex w-full">
             <GamePlaceholder />
           </motion.div>
 
           {/* Bento Tile 4: Forensic Disciplines / Pillars - 5 Cols */}
-          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-5 flex">
+          <motion.div variants={itemVariants} className="bento-5 flex w-full">
             <ForensicHighlights />
           </motion.div>
 
           {/* Bento Tile 5: Lead Contacts Roster - 12 Cols */}
-          <motion.div variants={itemVariants} className="col-span-12 flex">
+          <motion.div variants={itemVariants} className="bento-12 flex w-full">
             <OfficerContacts />
           </motion.div>
         </motion.div>
