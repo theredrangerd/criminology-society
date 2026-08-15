@@ -93,7 +93,7 @@ export const App: React.FC = () => {
             Site by Noah Austin
           </p>
           <p className="font-mono text-xs sm:text-sm text-[#9e232f] text-center">
-            <a 
+            <a
               href="mailto:austi118767@gapps.uwcsea.edu.sg"
               className="hover:text-[#eedec9] hover:underline transition-colors inline-block"
             >

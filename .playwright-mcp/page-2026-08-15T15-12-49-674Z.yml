@@ -1,0 +1,129 @@
+- generic [ref=e3]:
+  - button "Mute forensic audio" [ref=e4]:
+    - generic [ref=e9]: "AUDIO: ON"
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]: "CASE REF: #CS-2026"
+        - generic [ref=e19]: OFFICIAL LIFECON 2026 BOOTH
+      - generic [ref=e20]:
+        - heading [level=1] [ref=e21]:
+          - generic [ref=e22]: CRIMINLGY
+          - generic [ref=e43]: SCIETY
+        - paragraph [ref=e54]: "\"Uncovering human behavior, forensic science, and the architecture of justice.\""
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - generic: CASE BRIEF // WHAT IS CRIMSOC?
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - heading "What is CrimSoc?" [level=2] [ref=e61]
+            - generic [ref=e62]:
+              - generic [ref=e63]: "DOSSIER #01"
+              - generic [ref=e64]: ACTIVE CASE
+          - paragraph [ref=e65]:
+            - text: The
+            - strong [ref=e66]: Criminology Society
+            - text: dives into the world of crime, law, and justice. We analyze criminal behavior, explore real-life cases, and uncover how laws and society respond while sharpening your critical thinking and problem-solving skills.
+          - paragraph [ref=e67]:
+            - text: Perfect for anyone curious about
+            - strong [ref=e68]: law, finance, STEM
+            - text: ", or the science behind human behavior. This society promises excitement, insight, games, but also a deeper understanding into the society we live in and the changes we can make."
+          - generic [ref=e69]:
+            - generic [ref=e70]: Behavioral Profiling
+            - generic [ref=e80]: Forensic Law
+            - generic [ref=e84]: Real-Life Cases
+            - generic [ref=e88]: Interactive Games
+      - generic [ref=e94]:
+        - generic: LOGISTICS // SCHEDULE
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - heading "Weekly Meetings" [level=2] [ref=e102]
+            - generic [ref=e103]: TERM 1 & 2
+          - generic [ref=e104]:
+            - generic [ref=e110]:
+              - generic [ref=e111]: WHERE
+              - generic [ref=e112]: MATH 203
+              - generic [ref=e113]: High School Math Block
+            - generic [ref=e119]:
+              - generic [ref=e120]: WHEN
+              - generic [ref=e121]: TUESDAYS 12:45 – 1:15 PM
+              - generic [ref=e122]: Lunchtime Weekly Meetings
+          - generic [ref=e123]:
+            - paragraph [ref=e124]: See you there!
+            - generic [ref=e125]: Open to all grades & curiosity levels
+      - generic [ref=e127]:
+        - generic: EVIDENCE // LEAD CONTACTS
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - heading "Lead Officer Contacts" [level=2] [ref=e134]
+            - generic [ref=e135]: OFFICER ROSTER • TAP TO COPY
+          - paragraph [ref=e136]: "Have questions regarding meeting agendas, case analyses, or joining the committee? Reach out directly to any student lead:"
+          - generic [ref=e137]:
+            - button "LEAD-01 Executive Lead ghosh127294@gapps.uwcsea.edu.sg" [ref=e138] [cursor=pointer]:
+              - generic [ref=e144]:
+                - generic [ref=e145]:
+                  - generic [ref=e146]: LEAD-01
+                  - generic [ref=e147]: Executive Lead
+                - generic [ref=e148]: ghosh127294@gapps.uwcsea.edu.sg
+            - button "LEAD-02 Executive Lead unswo31797@gapps.uwcsea.edu.sg" [ref=e153] [cursor=pointer]:
+              - generic [ref=e159]:
+                - generic [ref=e160]:
+                  - generic [ref=e161]: LEAD-02
+                  - generic [ref=e162]: Executive Lead
+                - generic [ref=e163]: unswo31797@gapps.uwcsea.edu.sg
+            - button "LEAD-03 Executive Lead wasu79763@gapps.uwcsea.edu.sg" [ref=e168] [cursor=pointer]:
+              - generic [ref=e174]:
+                - generic [ref=e175]:
+                  - generic [ref=e176]: LEAD-03
+                  - generic [ref=e177]: Executive Lead
+                - generic [ref=e178]: wasu79763@gapps.uwcsea.edu.sg
+            - button "LEAD-04 Executive Lead seriz32192@gapps.uwcsea.edu.sg" [ref=e183] [cursor=pointer]:
+              - generic [ref=e189]:
+                - generic [ref=e190]:
+                  - generic [ref=e191]: LEAD-04
+                  - generic [ref=e192]: Executive Lead
+                - generic [ref=e193]: seriz32192@gapps.uwcsea.edu.sg
+            - button "LEAD-05 Executive Lead ding39701@gapps.uwcsea.edu.sg" [ref=e198] [cursor=pointer]:
+              - generic [ref=e204]:
+                - generic [ref=e205]:
+                  - generic [ref=e206]: LEAD-05
+                  - generic [ref=e207]: Executive Lead
+                - generic [ref=e208]: ding39701@gapps.uwcsea.edu.sg
+      - generic [ref=e214]:
+        - generic: CURRICULUM // PILLARS
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - heading "What We Explore" [level=2] [ref=e223]
+            - generic [ref=e224]: PILLARS
+          - paragraph [ref=e225]: "Bridging social science and forensic deduction through active case analysis:"
+          - generic [ref=e226]:
+            - generic [ref=e231]:
+              - generic [ref=e232]: Criminal Profiling
+              - generic [ref=e233]: Motive & psychopathy patterns
+            - generic [ref=e247]:
+              - generic [ref=e248]: Forensic Science
+              - generic [ref=e249]: Biometrics & evidence chains
+            - generic [ref=e255]:
+              - generic [ref=e256]: Law & Society
+              - generic [ref=e257]: Justice systems & ethics
+            - generic [ref=e264]:
+              - generic [ref=e265]: Mock Trials & Games
+              - generic [ref=e266]: Hands-on case challenges
+          - generic [ref=e267]: ✦ Perfect for Law, Finance, STEM, and Psychology ✦
+      - generic [ref=e269]:
+        - generic: CLASSIFIED // MINI-GAME
+        - generic [ref=e273]:
+          - generic [ref=e274]:
+            - heading "The Suspect Lineup" [level=3] [ref=e279]
+            - generic [ref=e280]: "CASE FILE #02 • LIVE"
+          - generic [ref=e281]:
+            - heading "Cognitive Bias & Halo Effect Profiling" [level=4] [ref=e282]
+            - paragraph [ref=e283]: Can your instincts pierce visual stereotypes? A forensic psychology challenge testing whether you judge criminal profiles by aesthetic assumptions — or by hard forensic evidence.
+          - generic [ref=e284]:
+            - generic [ref=e285]: 5 CCTV Suspects
+            - generic [ref=e290]: Forensic Profiling
+            - generic [ref=e301]: Live Bias Meter
+          - button "Start Investigation" [ref=e306] [cursor=pointer]
+    - generic [ref=e309]:
+      - paragraph [ref=e311]: "CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026"
+      - paragraph [ref=e312]: "\"The mind of the perpetrator leaves a trace on every law we write.\""
