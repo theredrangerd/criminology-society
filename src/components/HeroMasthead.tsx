@@ -37,33 +37,35 @@ export const HeroMasthead: React.FC = () => {
       </div>
 
       {/* Primary Masthead Title with Embedded Fingerprint Glyphs */}
-      <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider text-[#9e232f] uppercase select-none leading-none drop-shadow-[0_4px_16px_rgba(158,35,47,0.35)] break-words">
-        {/* CRIMINOLOGY */}
-        <span className="inline-flex items-center flex-wrap justify-center">
-          CRIMIN
-          <BiometricGlyph />
-          L
-          <BiometricGlyph />
-          GY
-        </span>
-        <br />
-        {/* SOCIETY */}
-        <span className="inline-flex items-center mt-1.5 text-[#eedec9] flex-wrap justify-center">
-          S
-          <BiometricGlyph />
-          CIETY
-        </span>
-      </h1>
+      <div className="flex flex-col items-center justify-center text-center w-full">
+        <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider text-[#9e232f] uppercase select-none leading-none drop-shadow-[0_4px_16px_rgba(158,35,47,0.35)] break-words text-center w-full">
+          {/* CRIMINOLOGY */}
+          <span className="inline-flex items-center justify-center">
+            CRIMIN
+            <BiometricGlyph />
+            L
+            <BiometricGlyph />
+            GY
+          </span>
+          <br />
+          {/* SOCIETY */}
+          <span className="inline-flex items-center justify-center mt-1.5 text-[#eedec9]">
+            S
+            <BiometricGlyph />
+            CIETY
+          </span>
+        </h1>
 
-      {/* Subtitle / Question Hook */}
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="font-editorial italic text-xl md:text-2xl text-[#eedec9]/90 mt-4 max-w-2xl mx-auto"
-      >
-        "Uncovering human behavior, forensic science, and the architecture of justice."
-      </motion.p>
+        {/* Subtitle / Quote Centered Directly Beneath */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="font-editorial italic text-base sm:text-lg md:text-xl lg:text-2xl text-[#eedec9]/90 mt-5 max-w-3xl w-full text-center px-4 leading-relaxed"
+        >
+          "Uncovering human behavior, forensic science, and the architecture of justice."
+        </motion.p>
+      </div>
     </header>
   );
 };
