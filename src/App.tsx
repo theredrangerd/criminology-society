@@ -66,9 +66,9 @@ export const App: React.FC = () => {
             <LogisticsBadge />
           </motion.div>
 
-          {/* Bento Tile 3: Suspect Lineup Mini-Game Slot - 7 Cols */}
+          {/* Bento Tile 3: Lead Contacts Roster - 7 Cols */}
           <motion.div variants={itemVariants} className="bento-7 flex w-full">
-            <GamePlaceholder />
+            <OfficerContacts />
           </motion.div>
 
           {/* Bento Tile 4: Forensic Disciplines / Pillars - 5 Cols */}
@@ -76,9 +76,9 @@ export const App: React.FC = () => {
             <ForensicHighlights />
           </motion.div>
 
-          {/* Bento Tile 5: Lead Contacts Roster - 12 Cols */}
+          {/* Bento Tile 5: Suspect Lineup Mini-Game Slot - 12 Cols */}
           <motion.div variants={itemVariants} className="bento-12 flex w-full">
-            <OfficerContacts />
+            <GamePlaceholder />
           </motion.div>
         </motion.div>
 
