@@ -89,8 +89,8 @@ export const App: React.FC = () => {
               CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026
             </p>
           </div>
-          <p className="font-editorial text-sm sm:text-base text-[#eedec9]/90 max-w-2xl mx-auto text-center leading-relaxed">
-            Designed and developed by Noah Austin
+          <p className="font-editorial text-base sm:text-lg text-[#eedec9] font-medium tracking-wide max-w-2xl mx-auto text-center leading-relaxed">
+            Site by Noah Austin
           </p>
           <p className="font-mono text-xs sm:text-sm text-[#9e232f] text-center">
             <a 
