@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Eye, EyeOff, RotateCcw, Trash2, X, AlertTriangle, Target, AlertCircle,
+  RotateCcw, Trash2, X, AlertTriangle, Target, AlertCircle,
 } from 'lucide-react';
 import type { GamePhase, Suspect } from './suspects';
 import { totalVotes } from './suspects';
@@ -11,8 +11,6 @@ interface VerdictBannerProps {
   selectedSuspect: Suspect;
   phase: GamePhase;
   votes: Record<number, number>;
-  onReveal: () => void;
-  onConceal: () => void;
   onReset: () => void;
   onClearVotes: () => void;
 }
@@ -21,8 +19,6 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
   selectedSuspect,
   phase,
   votes,
-  onReveal,
-  onConceal,
   onReset,
   onClearVotes,
 }) => {
@@ -30,16 +26,6 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
   const isCorrect = selectedSuspect.isGuilty;
   const isRevealed = phase === 'revealed';
   const total = totalVotes(votes);
-
-  const handleReveal = () => {
-    audio.playChime();
-    onReveal();
-  };
-
-  const handleConceal = () => {
-    audio.playPaperShuffle();
-    onConceal();
-  };
 
   const handleReset = () => {
     audio.playStampSlam();
@@ -167,27 +153,6 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
         transition={{ delay: 0.7 }}
         className="flex flex-wrap gap-2"
       >
-        {/* Reveal / Conceal toggle */}
-        {!isRevealed ? (
-          <button
-            id="reveal-results-btn"
-            onClick={handleReveal}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7e1923] text-[#fcfaf4] font-mono text-xs font-bold uppercase tracking-wider shadow-[0_3px_0px_#5a1017] hover:shadow-[0_5px_12px_rgba(126,25,35,0.45)] hover:-translate-y-0.5 transition-all cursor-pointer"
-          >
-            <Eye className="w-3.5 h-3.5" />
-            Reveal Results
-          </button>
-        ) : (
-          <button
-            id="conceal-results-btn"
-            onClick={handleConceal}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fcfaf4]/10 border border-[#eedec9]/30 text-[#eedec9] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#fcfaf4]/15 hover:-translate-y-0.5 transition-all cursor-pointer"
-          >
-            <EyeOff className="w-3.5 h-3.5" />
-            Conceal Results
-          </button>
-        )}
-
         {/* ── Reset Case — prominent booth operator button ─────────────── */}
         <button
           id="reset-game-btn"

@@ -37,6 +37,12 @@ export const SuspectLineup: React.FC = () => {
       audio.stopAlarm();
       return;
     }
+    
+    // Play tick sound every second
+    if (timeLeft > 0) {
+      audio.playKeystroke();
+    }
+
     if (timeLeft <= 0) {
       if (!timerExpired) {
         setTimerExpired(true);
@@ -58,13 +64,12 @@ export const SuspectLineup: React.FC = () => {
       const updated = incrementVote(votes, id);
       setVotes(updated);
       setSelectedId(id);
-      setPhase('verdict');
+      setPhase('revealed'); // Directly show verdict and results
     },
     [phase, votes],
   );
 
-  const handleReveal = useCallback(() => setPhase('revealed'), []);
-  const handleConceal = useCallback(() => setPhase('verdict'), []);
+
 
   const handleReset = useCallback(() => {
     setPhase('idle');
@@ -131,7 +136,11 @@ export const SuspectLineup: React.FC = () => {
                 </span>
               </div>
 
-              {phase === 'lineup' && <CountdownBar timeLeft={timeLeft} expired={timerExpired} />}
+              {phase === 'lineup' && (
+                <div className="mb-6">
+                  <CountdownBar timeLeft={timeLeft} expired={timerExpired} />
+                </div>
+              )}
 
               {/* 5-card grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
@@ -154,8 +163,6 @@ export const SuspectLineup: React.FC = () => {
                     selectedSuspect={selectedSuspect}
                     phase={phase}
                     votes={votes}
-                    onReveal={handleReveal}
-                    onConceal={handleConceal}
                     onReset={handleReset}
                     onClearVotes={handleClearVotes}
                   />
