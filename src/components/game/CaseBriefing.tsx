@@ -9,7 +9,7 @@ const FULL_TEXT =
   'One of them cloned the access card before slipping back into the crowd undetected. ' +
   'Your assignment: study each profile and identify the perpetrator.';
 
-const CHAR_DELAY_MS = 28;
+const CHAR_DELAY_MS = 8;
 
 interface CaseBriefingProps {
   onReady: () => void;
