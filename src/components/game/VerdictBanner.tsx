@@ -65,8 +65,8 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
         className={[
           'rounded-2xl border-2 p-4 sm:p-5 relative overflow-hidden',
           isCorrect
-            ? 'bg-[#0f0d0c] border-[#7e1923]/60'
-            : 'bg-[#0f0d0c] border-[#b45309]/60',
+            ? 'bg-[#fdf5f5] border-[#7e1923]/30'
+            : 'bg-[#fef9f0] border-[#b45309]/30',
         ].join(' ')}
       >
         {/* Animated bg glow */}
@@ -77,7 +77,7 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
               ? 'bg-radial-gradient-[circle_at_30%_50%,#7e1923,transparent]'
               : 'bg-[#b45309]/10',
           ].join(' ')}
-          animate={{ opacity: [0.15, 0.28, 0.15] }}
+          animate={{ opacity: [0.08, 0.15, 0.08] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         />
 
@@ -116,7 +116,10 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.35 }}
-                className="font-editorial text-base sm:text-lg font-bold text-[#fcfaf4] mt-0.5 leading-snug"
+                className={[
+                  'font-editorial text-base sm:text-lg font-bold mt-0.5 leading-snug',
+                  isCorrect ? 'text-[#3a0a0e]' : 'text-[#431a00]',
+                ].join(' ')}
               >
                 {isCorrect
                   ? 'You pierced the Halo Effect and caught the real perpetrator.'
@@ -130,7 +133,10 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="font-body text-[#eedec9]/80 text-sm leading-relaxed pl-12"
+            className={[
+              'font-body text-sm leading-relaxed pl-12',
+              isCorrect ? 'text-[#4f131a]' : 'text-[#6b3000]',
+            ].join(' ')}
           >
             {isCorrect
               ? 'You have the instincts of a forensic profiler. Suspect #05 used a concealed RFID cloner to steal the keycard — exploiting trust, presentation, and the Halo Effect.'
@@ -146,7 +152,7 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
         transition={{ delay: 0.6 }}
         className="rounded-xl bg-[#7e1923]/8 border border-[#7e1923]/20 px-4 py-3 text-center"
       >
-        <p className="font-editorial text-sm italic text-[#eedec9]/80">
+        <p className="font-editorial text-sm italic text-[#4f131a]">
           Ready to master the science of human behaviour &amp; forensic profiling?
         </p>
         <p className="font-mono text-xs text-[#9e232f] mt-1 font-bold uppercase tracking-wider">
