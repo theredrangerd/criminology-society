@@ -83,14 +83,22 @@ export const App: React.FC = () => {
         </motion.div>
 
         {/* Footer Dossier Stamp */}
-        <footer className="footer-dossier space-y-3">
+        <footer className="footer-dossier space-y-2 pb-8">
           <div className="inline-block px-4 py-1 rounded-full bg-[#7e1923]/10 border border-[#7e1923]/30 mb-1">
             <p className="font-mono text-xs text-[#8692a1] uppercase tracking-widest">
               CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026
             </p>
           </div>
-          <p className="font-editorial italic text-base sm:text-lg text-[#eedec9]/80 max-w-2xl mx-auto leading-relaxed">
-            "The mind of the perpetrator leaves a trace on every law we write."
+          <p className="font-editorial text-base sm:text-lg text-[#eedec9]/90 max-w-2xl mx-auto leading-relaxed">
+            Designed and developed by Noah Austin
+          </p>
+          <p className="font-mono text-xs sm:text-sm text-[#9e232f]">
+            <a 
+              href="mailto:austi118767@gapps.uwcsea.edu.sg"
+              className="hover:text-[#eedec9] hover:underline transition-colors"
+            >
+              austi118767@gapps.uwcsea.edu.sg
+            </a>
           </p>
         </footer>
       </main>
