@@ -36,7 +36,6 @@ export const OfficerContacts: React.FC = () => {
       tapeText="EVIDENCE // LEAD CONTACTS" 
       tapeAngle={-0.8}
       badgeLabel="OFFICER ROSTER"
-      className="max-w-3xl mx-auto"
     >
       <div className="space-y-4">
         <div className="border-b border-[#7e1923]/20 pb-3 flex items-center justify-between">

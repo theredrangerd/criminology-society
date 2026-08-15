@@ -1,9 +1,11 @@
+import React from 'react';
 import { type Variants, motion } from 'framer-motion';
 import { HeroMasthead } from './components/HeroMasthead';
 import { WhatIsCrimSoc } from './components/WhatIsCrimSoc';
 import { LogisticsBadge } from './components/LogisticsBadge';
-import { OfficerContacts } from './components/OfficerContacts';
 import { GamePlaceholder } from './components/GamePlaceholder';
+import { ForensicHighlights } from './components/ForensicHighlights';
+import { OfficerContacts } from './components/OfficerContacts';
 import { SoundToggle } from './components/SoundToggle';
 import { AttractMode } from './components/AttractMode';
 
@@ -14,14 +16,14 @@ export const App: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.18,
-        delayChildren: 0.2,
+        staggerChildren: 0.14,
+        delayChildren: 0.15,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30, scale: 0.96 },
+    hidden: { opacity: 0, y: 25, scale: 0.97 },
     visible: {
       opacity: 1,
       y: 0,
@@ -43,40 +45,45 @@ export const App: React.FC = () => {
       <AttractMode />
 
       {/* Main Investigation Board Canvas */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 relative z-10 flex flex-col items-center">
         {/* Hero Masthead with Biometric Typography & Rubber Stamp */}
         <HeroMasthead />
 
-        {/* Staggered Evidence Dossiers Grid */}
+        {/* Bento Box Investigation Board */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-12 md:space-y-16 mt-6"
+          className="bento-board w-full mt-8"
         >
-          {/* Card 1: What is CrimSoc? */}
-          <motion.div variants={itemVariants}>
+          {/* Bento Tile 1: Case Brief (What is CrimSoc?) - 7 Cols */}
+          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-7 flex">
             <WhatIsCrimSoc />
           </motion.div>
 
-          {/* Card 2: Logistics & Time */}
-          <motion.div variants={itemVariants}>
+          {/* Bento Tile 2: Weekly Logistics - 5 Cols */}
+          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-5 flex">
             <LogisticsBadge />
           </motion.div>
 
-          {/* Card 3: Designated Slot for the Suspect Lineup Mini-Game */}
-          <motion.div variants={itemVariants}>
+          {/* Bento Tile 3: Suspect Lineup Mini-Game Slot - 7 Cols */}
+          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-7 flex">
             <GamePlaceholder />
           </motion.div>
 
-          {/* Card 4: Lead Contacts & Email Copy Roster */}
-          <motion.div variants={itemVariants}>
+          {/* Bento Tile 4: Forensic Disciplines / Pillars - 5 Cols */}
+          <motion.div variants={itemVariants} className="col-span-12 lg:col-span-5 flex">
+            <ForensicHighlights />
+          </motion.div>
+
+          {/* Bento Tile 5: Lead Contacts Roster - 12 Cols */}
+          <motion.div variants={itemVariants} className="col-span-12 flex">
             <OfficerContacts />
           </motion.div>
         </motion.div>
 
         {/* Footer Dossier Stamp */}
-        <footer className="mt-20 pt-8 border-t border-[#7e1923]/30 text-center space-y-3">
+        <footer className="mt-16 pt-8 border-t border-[#7e1923]/30 text-center space-y-3 w-full max-w-4xl">
           <p className="font-mono text-xs text-[#8692a1] uppercase tracking-widest">
             CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026
           </p>

@@ -176,3 +176,28 @@ body::before {
 ::-webkit-scrollbar-thumb:hover {
   background: #7e1923;
 }
+
+/* Bento Grid System */
+.bento-board {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .bento-board {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-board {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

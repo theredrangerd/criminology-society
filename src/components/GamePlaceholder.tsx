@@ -8,7 +8,7 @@ export const GamePlaceholder: React.FC = () => {
       tapeText="CLASSIFIED // MINI-GAME" 
       tapeAngle={-1.8}
       badgeLabel="CASE FILE #02"
-      className="max-w-3xl mx-auto border-2 border-dashed border-[#9e232f]/40 relative overflow-hidden"
+      className="border-2 border-dashed border-[#9e232f]/40 relative overflow-hidden"
     >
       <div className="text-center py-6 px-4 space-y-4">
         {/* Angled Caution Stamp */}

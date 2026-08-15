@@ -8,7 +8,6 @@ export const WhatIsCrimSoc: React.FC = () => {
       tapeText="CASE BRIEF // WHAT IS CRIMSOC?" 
       tapeAngle={-1.5}
       badgeLabel="DOSSIER #01"
-      className="max-w-3xl mx-auto"
     >
       <div className="space-y-4">
         {/* Header with Stamp */}
