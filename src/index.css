@@ -177,13 +177,13 @@ body::before {
   background: #7e1923;
 }
 
-/* Responsive Bento Grid System */
+/* Responsive Fluid Bento Grid System */
 .bento-board {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 2rem;
+  column-gap: 1.75rem;
+  row-gap: 2.75rem;
   width: 100%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -204,29 +204,33 @@ body::before {
   grid-column: span 12 / span 12;
 }
 
-/* Tablet Breakpoint (640px - 1023px) */
-@media (min-width: 640px) and (max-width: 1023px) {
+/* Tablet Breakpoint (768px - 1023px): Fluid 2-Column Split */
+@media (min-width: 768px) and (max-width: 1023px) {
   .bento-board {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    row-gap: 2.25rem;
   }
 
-  .bento-7,
+  .bento-7 {
+    grid-column: span 7 / span 7;
+  }
+
   .bento-5 {
-    grid-column: span 1 / span 1;
+    grid-column: span 5 / span 5;
   }
 
   .bento-12 {
-    grid-column: span 2 / span 2;
+    grid-column: span 12 / span 12;
   }
 }
 
-/* Mobile Breakpoint (< 640px) */
-@media (max-width: 639px) {
+/* Mobile Breakpoint (< 768px): Fluid Full-Width Stack */
+@media (max-width: 767px) {
   .bento-board {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 2rem;
     width: 100%;
   }
 

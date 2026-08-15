@@ -5,7 +5,7 @@ import { audio } from '../utils/audio';
 
 export const HeroMasthead: React.FC = () => {
   return (
-    <header className="text-center pt-8 pb-12 px-4 relative z-10 max-w-5xl mx-auto">
+    <header className="text-center pt-6 pb-10 px-2 sm:px-4 relative z-10 w-full max-w-6xl mx-auto">
       {/* Top Meta Line with Handcuffs Icon & Rubber Stamp */}
       <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
         {/* Linked Handcuffs Vector Graphic */}
