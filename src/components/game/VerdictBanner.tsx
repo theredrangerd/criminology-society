@@ -188,14 +188,14 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
           </button>
         )}
 
-        {/* Reset for next visitor */}
+        {/* ── Reset Case — prominent booth operator button ─────────────── */}
         <button
           id="reset-game-btn"
           onClick={handleReset}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fcfaf4]/5 border border-[#eedec9]/20 text-[#eedec9]/60 font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#fcfaf4]/10 hover:text-[#eedec9] hover:-translate-y-0.5 transition-all cursor-pointer"
+          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-[#7e1923]/50 text-[#7e1923] bg-[#7e1923]/5 font-mono text-sm font-bold uppercase tracking-wider hover:bg-[#7e1923]/12 hover:border-[#7e1923]/80 hover:-translate-y-0.5 transition-all cursor-pointer"
         >
-          <RotateCcw className="w-3.5 h-3.5" />
-          Reset for Next Visitor
+          <RotateCcw className="w-4 h-4" />
+          ↺ Reset Case — Run it Back
         </button>
 
         {/* Clear All Votes — only shown when revealed */}
