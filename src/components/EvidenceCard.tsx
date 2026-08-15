@@ -67,7 +67,7 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
         rotateY,
         transformPerspective: 1800,
       }}
-      className={`evidence-card-3d w-full h-full relative pt-8 sm:pt-9 md:pt-10 pb-6 sm:pb-7 px-6 sm:px-8 md:px-9 flex flex-col justify-between select-none ${className}`}
+      className={`evidence-card-3d w-full h-full relative flex flex-col justify-between select-none ${className}`}
     >
       {/* Kraft Masking Tape Pin on Top */}
       {hasTape && (

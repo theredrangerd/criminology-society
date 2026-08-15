@@ -85,6 +85,10 @@ body::before {
   position: relative;
   transition: box-shadow 0.25s ease;
   transform-style: preserve-3d;
+  padding-top: 3.5rem !important;
+  padding-bottom: 1.75rem !important;
+  padding-left: clamp(1.25rem, 2.5vw, 2.25rem) !important;
+  padding-right: clamp(1.25rem, 2.5vw, 2.25rem) !important;
 }
 
 .evidence-card-3d:hover {
@@ -96,16 +100,16 @@ body::before {
 /* Realistic Kraft Masking Tape */
 .kraft-tape {
   position: absolute;
-  top: -12px;
+  top: -11px;
   left: 50%;
   transform: translateX(-50%) rotate(-1deg);
-  min-width: 140px;
+  min-width: 120px;
   width: max-content;
-  max-width: 85%;
-  padding: 0 16px;
-  height: 24px;
+  max-width: 80%;
+  padding: 0 14px;
+  height: 22px;
   background: var(--tape-base);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   border-left: 2px dashed rgba(184, 150, 110, 0.6);
   border-right: 2px dashed rgba(184, 150, 110, 0.6);
   opacity: 0.95;
