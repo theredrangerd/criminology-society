@@ -9,7 +9,10 @@ const FULL_TEXT =
   'One of them cloned the access card before slipping back into the crowd undetected. ' +
   'Your assignment: study each profile and identify the perpetrator.';
 
-const CHAR_DELAY_MS = 8;
+const CHAR_DELAY_MS = 10;
+// Grace period before the first character reveals, so the rapid per-character
+// re-renders don't kick in while the idle → briefing crossfade is still animating.
+const INITIAL_REVEAL_DELAY_MS = 350;
 
 interface CaseBriefingProps {
   onReady: () => void;
@@ -25,6 +28,7 @@ export const CaseBriefing: React.FC<CaseBriefingProps> = ({ onReady }) => {
   // Typewriter tick
   useEffect(() => {
     if (isComplete) return;
+    const delay = revealed === 0 ? INITIAL_REVEAL_DELAY_MS : CHAR_DELAY_MS;
     const timer = setTimeout(() => {
       setRevealed((prev) => {
         const next = prev + 1;
@@ -32,7 +36,7 @@ export const CaseBriefing: React.FC<CaseBriefingProps> = ({ onReady }) => {
         if (next % 3 === 0) audio.playKeystroke();
         return next;
       });
-    }, CHAR_DELAY_MS);
+    }, delay);
     return () => clearTimeout(timer);
   }, [revealed, isComplete]);
 

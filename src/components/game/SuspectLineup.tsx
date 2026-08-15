@@ -102,30 +102,23 @@ export const SuspectLineup: React.FC = () => {
       tapeAngle={-1.8}
       className="border-2 border-[#7e1923]/30 relative overflow-visible"
     >
-      <div className="space-y-5 w-full">
-        {/* ── Phase: Idle / Briefing ──────────────────────────────────────── */}
-        <AnimatePresence mode="wait">
-          {phase === 'idle' && (
-            <motion.div key="idle">
-              <GameIdle onStart={handleStart} />
-            </motion.div>
-          )}
-          {phase === 'briefing' && (
-            <motion.div key="briefing">
-              <CaseBriefing onReady={handleReady} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* ── Phase: Suspect Grid (lineup / verdict / revealed) ───────────── */}
-        <AnimatePresence>
+      <div className="space-y-5 w-full relative">
+        {/* ── Phase swap: Idle / Briefing / Suspect Grid ──────────────────────
+            All three live in ONE AnimatePresence with mode="popLayout" so only
+            one phase ever occupies layout flow at a time — the outgoing block
+            is popped to position:absolute the instant it starts exiting, so
+            the incoming block can settle into place immediately instead of
+            waiting around while both blocks' heights are stacked (that stacked
+            height was the cause of the box-closing jerk/flash). */}
+        <AnimatePresence mode="popLayout">
+          {phase === 'idle' && <GameIdle key="idle" onStart={handleStart} />}
+          {phase === 'briefing' && <CaseBriefing key="briefing" onReady={handleReady} />}
           {showSuspectGrid && (
             <motion.div
               key="grid"
               initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 26 }}
+              animate={{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 260, damping: 26 } }}
+              exit={{ opacity: 0, y: -8, transition: { duration: 0.2, ease: 'easeInOut' } }}
             >
               {/* Phase header strip */}
               <div className="flex items-center gap-2 mb-4">

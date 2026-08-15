@@ -141,7 +141,7 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
         <p className="font-editorial text-sm italic text-[#eedec9]/90">
           Ready to master the science of human behaviour &amp; forensic profiling?
         </p>
-        <p className="font-mono text-sm text-[#fcfaf4] mt-2 font-bold uppercase tracking-widest">
+        <p className="font-mono text-base sm:text-lg text-[#fcfaf4] mt-2 font-bold uppercase tracking-widest">
           Join CrimSoc — Tuesdays 12:45 PM • Math 203
         </p>
       </motion.div>

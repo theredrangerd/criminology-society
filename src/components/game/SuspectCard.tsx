@@ -35,7 +35,6 @@ export const SuspectCard: React.FC<SuspectCardProps> = ({
   return (
     <motion.div
       layout
-      layoutId={`suspect-${suspect.id}`}
       onClick={handleClick}
       initial={{ opacity: 0, y: 20 }}
       animate={{
