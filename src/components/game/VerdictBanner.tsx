@@ -65,8 +65,8 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
         className={[
           'rounded-2xl border-2 p-4 sm:p-5 relative overflow-hidden',
           isCorrect
-            ? 'bg-[#7e1923]/10 border-[#7e1923]/50'
-            : 'bg-[#b45309]/10 border-[#b45309]/40',
+            ? 'bg-[#0f0d0c] border-[#7e1923]/60'
+            : 'bg-[#0f0d0c] border-[#b45309]/60',
         ].join(' ')}
       >
         {/* Animated bg glow */}
