@@ -23,7 +23,7 @@ export const SUSPECTS: Suspect[] = [
     id: 1,
     codename: 'SUSPECT #01',
     archetype: 'The Rebel',
-    description: 'Leather jacket, visible tattoos on both forearms. Observed moving briskly through the corridor, hands in jacket pockets, scowling expression.',
+    description: '"I was running late to band practice — ask my bandmates, I\'m late every single Tuesday. I didn\'t even stop walking."',
     alibi: 'Was running late for band practice in the arts wing — confirmed by three bandmates. Never entered the archive corridor.',
     clue: '',
     stereotypeTag: 'APPEARANCE BIAS',
@@ -36,7 +36,7 @@ export const SUSPECTS: Suspect[] = [
     id: 2,
     codename: 'SUSPECT #02',
     archetype: 'The Hacker',
-    description: 'Oversized dark hoodie, downcast gaze, avoiding direct eye contact. Carrying a tangle of USB cables and a laptop bag.',
+    description: '"I had a CS midterm in two hours. I was in the library the whole time — the librarian scanned me in. I was barely holding it together."',
     alibi: 'Stress-studying for a Computer Science midterm in the library. Librarian confirmed swipe-in at 11:58 AM — well before the incident.',
     clue: '',
     stereotypeTag: 'TECH STEREOTYPE BIAS',
@@ -49,7 +49,7 @@ export const SUSPECTS: Suspect[] = [
     id: 3,
     codename: 'SUSPECT #03',
     archetype: 'The Janitor',
-    description: 'Facility coveralls and rubber gloves. Rushed past the archive doorway with cleaning equipment, appeared flustered.',
+    description: '"There was a water leak on Floor 3. I got the call at 12:10 and ran straight up. Check the maintenance logs — I was upstairs the whole time."',
     alibi: 'Responding to a water leak on Floor 3. Maintenance logs and two eyewitnesses place them upstairs from 12:10 PM onward.',
     clue: '',
     stereotypeTag: 'CLASS BIAS',
@@ -62,7 +62,7 @@ export const SUSPECTS: Suspect[] = [
     id: 4,
     codename: 'SUSPECT #04',
     archetype: 'The Streetwear Kid',
-    description: 'Oversized streetwear, dark sunglasses worn indoors, wireless headset. Casually loitering near the corridor entrance.',
+    description: '"I was just standing in the hallway listening to a podcast. I never even went through the door — you can check the camera angle."',
     alibi: 'Listening to a true crime podcast just outside the wing — never crossed the threshold. CCTV angle confirms they remained in the hallway.',
     clue: '',
     stereotypeTag: 'APPEARANCE BIAS',
@@ -75,7 +75,7 @@ export const SUSPECTS: Suspect[] = [
     id: 5,
     codename: 'SUSPECT #05',
     archetype: 'The Scholar',
-    description: 'Sharp tailored blazer, warm charming smile, clipboard tucked under one arm, official-looking badge lanyard. Moved confidently into the archive room.',
+    description: '"I was reviewing some documents inside — perfectly routine. I\'m happy to cooperate fully with whatever the investigation requires."',
     alibi: '',
     clue: 'A concealed RFID card cloner was attached to their badge lanyard — invisible at a glance. They cloned the master keycard in under four seconds while "reviewing documents". Criminals exploit trust, presentation, and the Halo Effect.',
     stereotypeTag: 'HALO EFFECT',
@@ -93,7 +93,7 @@ export const SUSPECTS: Suspect[] = [
 const STORAGE_KEY = 'crimsoc_votes_2026';
 
 // Seeded base counts so the chart looks realistic for the first visitor
-const SEED_VOTES: Record<number, number> = { 1: 38, 2: 36, 3: 11, 4: 5, 5: 10 };
+const SEED_VOTES: Record<number, number> = { 1: 4, 2: 4, 3: 1, 4: 0, 5: 1 };
 
 export function loadVotes(): Record<number, number> {
   try {

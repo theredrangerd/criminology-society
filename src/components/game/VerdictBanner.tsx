@@ -150,12 +150,12 @@ export const VerdictBanner: React.FC<VerdictBannerProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="rounded-xl bg-[#7e1923]/8 border border-[#7e1923]/20 px-4 py-3 text-center"
+        className="rounded-xl bg-[#7e1923] border border-[#5a1017] px-4 py-4 text-center shadow-[0_4px_0px_#5a1017]"
       >
-        <p className="font-editorial text-sm italic text-[#4f131a]">
+        <p className="font-editorial text-sm italic text-[#eedec9]/90">
           Ready to master the science of human behaviour &amp; forensic profiling?
         </p>
-        <p className="font-mono text-xs text-[#9e232f] mt-1 font-bold uppercase tracking-wider">
+        <p className="font-mono text-sm text-[#fcfaf4] mt-2 font-bold uppercase tracking-widest">
           Join CrimSoc — Tuesdays 12:45 PM • Math 203
         </p>
       </motion.div>

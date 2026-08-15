@@ -109,7 +109,7 @@ export const SuspectCard: React.FC<SuspectCardProps> = ({
         <p className="font-editorial text-sm font-bold text-[#7e1923] leading-tight">
           {suspect.archetype}
         </p>
-        <p className="font-body text-[#4f131a] text-[11px] leading-snug">
+        <p className="font-body italic text-[#4f131a] text-xs leading-snug border-l-2 border-[#7e1923]/30 pl-2">
           {suspect.description}
         </p>
 
