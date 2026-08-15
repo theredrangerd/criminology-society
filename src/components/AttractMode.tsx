@@ -35,7 +35,7 @@ export const AttractMode: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
-          className="fixed inset-0 pointer-events-none z-40 flex items-end justify-center pb-12 overflow-hidden"
+          className="fixed inset-0 pointer-events-none z-40 flex items-end justify-center pb-6 sm:pb-8 overflow-hidden"
         >
           {/* Sweeping Forensic Searchlight */}
           <motion.div

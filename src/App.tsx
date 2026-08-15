@@ -83,11 +83,13 @@ export const App: React.FC = () => {
         </motion.div>
 
         {/* Footer Dossier Stamp */}
-        <footer className="mt-16 pt-8 border-t border-[#7e1923]/30 text-center space-y-3 w-full max-w-4xl">
-          <p className="font-mono text-xs text-[#8692a1] uppercase tracking-widest">
-            CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026
-          </p>
-          <p className="font-editorial italic text-sm text-[#eedec9]/70">
+        <footer className="mt-28 mb-16 pt-10 border-t border-[#7e1923]/40 text-center space-y-3 w-full max-w-4xl relative z-10">
+          <div className="inline-block px-4 py-1 rounded-full bg-[#7e1923]/10 border border-[#7e1923]/30 mb-1">
+            <p className="font-mono text-xs text-[#8692a1] uppercase tracking-widest">
+              CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026
+            </p>
+          </div>
+          <p className="font-editorial italic text-base sm:text-lg text-[#eedec9]/80 max-w-2xl mx-auto leading-relaxed">
             "The mind of the perpetrator leaves a trace on every law we write."
           </p>
         </footer>

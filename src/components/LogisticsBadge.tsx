@@ -32,7 +32,7 @@ export const LogisticsBadge: React.FC = () => {
             <div>
               <span className="font-mono text-[10px] text-[#733139] uppercase font-bold tracking-wider block">WHERE</span>
               <span className="font-display font-black text-lg sm:text-xl text-[#7e1923] tracking-wide block">MATH 203</span>
-              <span className="text-[11px] sm:text-xs text-[#4f131a] block">High School Math Wing</span>
+              <span className="text-[11px] sm:text-xs text-[#4f131a] block">High School Math Block</span>
             </div>
           </div>
 
