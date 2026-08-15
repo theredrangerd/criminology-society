@@ -44,8 +44,8 @@ export const App: React.FC = () => {
       {/* LifeCon Idle Attract Mode */}
       <AttractMode />
 
-      {/* Main Investigation Board Canvas with Generous Edge Gutters */}
-      <main className="w-full max-w-[1540px] mx-auto px-6 sm:px-10 md:px-14 lg:px-20 py-6 md:py-12 relative z-10 flex flex-col items-center">
+      {/* Main Investigation Board Canvas with Expansive Edge Gutters */}
+      <main className="w-full max-w-[1440px] mx-auto px-8 sm:px-14 md:px-20 lg:px-28 xl:px-36 py-6 md:py-12 relative z-10 flex flex-col items-center">
         {/* Hero Masthead with Biometric Typography & Rubber Stamp */}
         <HeroMasthead />
 
