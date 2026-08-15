@@ -66,7 +66,7 @@ export const SuspectCard: React.FC<SuspectCardProps> = ({
         className={[
           'flex items-center justify-center relative overflow-hidden',
           'h-40 sm:h-44',
-          guiltyCelebrate ? 'bg-[#7e1923]/10' : 'bg-[#eedec9]/30',
+          guiltyCelebrate ? 'bg-[#fff0f0]' : 'bg-white',
         ].join(' ')}
       >
         <img
