@@ -8,7 +8,7 @@ export const LogisticsBadge: React.FC = () => {
       tapeText="LOGISTICS // SCHEDULE" 
       tapeAngle={1.4}
     >
-      <div className="flex flex-col justify-between h-full space-y-5">
+      <div className="flex flex-col justify-between h-full space-y-6">
         {/* Header Badge */}
         <div className="border-b border-[#7e1923]/20 pb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -23,7 +23,7 @@ export const LogisticsBadge: React.FC = () => {
         </div>
 
         {/* Core Logistics Blocks */}
-        <div className="space-y-3">
+        <div className="space-y-4">
           {/* Where */}
           <div className="flex items-start gap-3 p-3 sm:p-3.5 rounded-xl bg-[#eedec9]/40 border border-[#eedec9]">
             <div className="p-2 rounded-lg bg-[#7e1923]/10 border border-[#7e1923]/20 text-[#7e1923] shrink-0 mt-0.5">
@@ -52,7 +52,7 @@ export const LogisticsBadge: React.FC = () => {
         {/* Sign-off Seal */}
         <div className="p-3 rounded-xl bg-[#7e1923]/5 border border-[#7e1923]/20 text-center">
           <p className="font-editorial italic font-bold text-base sm:text-lg text-[#7e1923] leading-tight">
-            "See you there!"
+            See you there!
           </p>
           <span className="font-mono text-[10px] text-[#733139] uppercase tracking-wider block mt-0.5">
             Open to all grades & curiosity levels
