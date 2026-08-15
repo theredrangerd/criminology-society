@@ -1,0 +1,101 @@
+import React, { useState } from 'react';
+import { EvidenceCard } from './EvidenceCard';
+import { Copy, Check, Mail, Shield } from 'lucide-react';
+import { audio } from '../utils/audio';
+
+interface Officer {
+  id: string;
+  role: string;
+  email: string;
+  badge: string;
+}
+
+const OFFICERS: Officer[] = [
+  { id: 'ghosh', role: 'Executive Lead', email: 'ghosh127294@gapps.uwcsea.edu.sg', badge: 'LEAD-01' },
+  { id: 'unswo', role: 'Executive Lead', email: 'unswo31797@gapps.uwcsea.edu.sg', badge: 'LEAD-02' },
+  { id: 'wasu', role: 'Executive Lead', email: 'wasu79763@gapps.uwcsea.edu.sg', badge: 'LEAD-03' },
+  { id: 'seriz', role: 'Executive Lead', email: 'seriz32192@gapps.uwcsea.edu.sg', badge: 'LEAD-04' },
+  { id: 'ding', role: 'Executive Lead', email: 'ding39701@gapps.uwcsea.edu.sg', badge: 'LEAD-05' },
+];
+
+export const OfficerContacts: React.FC = () => {
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const handleCopy = (email: string, id: string) => {
+    navigator.clipboard.writeText(email);
+    setCopiedId(id);
+    audio.playChime();
+
+    setTimeout(() => {
+      setCopiedId(null);
+    }, 2000);
+  };
+
+  return (
+    <EvidenceCard 
+      tapeText="EVIDENCE // LEAD CONTACTS" 
+      tapeAngle={-0.8}
+      badgeLabel="OFFICER ROSTER"
+      className="max-w-3xl mx-auto"
+    >
+      <div className="space-y-4">
+        <div className="border-b border-[#7e1923]/20 pb-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Shield className="w-5 h-5 text-[#7e1923]" />
+            <h2 className="font-editorial text-2xl font-bold text-[#7e1923] tracking-wide">
+              Lead Officer Contacts
+            </h2>
+          </div>
+          <span className="font-mono text-xs text-[#733139] uppercase">
+            CLICK TO COPY EMAIL
+          </span>
+        </div>
+
+        <p className="font-body text-[#4f131a] text-sm">
+          Have questions regarding meeting agendas, case analyses, or joining the committee? Reach out directly to any of the student leads:
+        </p>
+
+        {/* 5 Officers Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          {OFFICERS.map((officer) => {
+            const isCopied = copiedId === officer.id;
+            return (
+              <div 
+                key={officer.id}
+                className="flex items-center justify-between p-3 rounded-xl bg-[#eedec9]/40 border border-[#eedec9] hover:border-[#7e1923]/40 transition-colors group"
+              >
+                <div className="flex items-center gap-2.5 overflow-hidden">
+                  <div className="p-2 rounded-lg bg-[#7e1923]/10 text-[#7e1923] shrink-0">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div className="truncate">
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-mono text-[10px] text-[#7e1923] font-bold uppercase">{officer.badge}</span>
+                      <span className="text-xs font-semibold text-[#4f131a]">{officer.role}</span>
+                    </div>
+                    <span className="font-mono text-xs text-[#733139] block truncate">
+                      {officer.email}
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => handleCopy(officer.email, officer.id)}
+                  title="Copy email to clipboard"
+                  className="p-2 rounded-lg bg-[#fcfaf4] hover:bg-[#7e1923] text-[#7e1923] hover:text-[#fcfaf4] border border-[#eedec9] transition-all shrink-0 ml-2 shadow-sm"
+                >
+                  {isCopied ? (
+                    <Check className="w-4 h-4 text-green-700" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </EvidenceCard>
+  );
+};

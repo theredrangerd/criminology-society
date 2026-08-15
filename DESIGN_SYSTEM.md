@@ -147,3 +147,47 @@ All values are precisely sampled and harmonized from the original official poste
    - Prominent badge: *"Ready to master the science of human behavior & forensic profiling?"*
    - CTA Button: **[Join CrimSoc — Tuesdays 12:45 PM in Math 203]**
 
+---
+
+## 8. Framer Motion Animation Engine & Physics Specifications
+
+### 8.1 Motion Philosophy
+Every animation must feel physical, tactile, and weighted—resembling physical crime scene dossiers, forensic instruments, and rubber ink stamps slamming onto an obsidian investigation board.
+
+### 8.2 Physics & Spring Tokens
+- **Brisk Spring (UI Elements, Buttons, Tags):**
+  - `stiffness: 400`, `damping: 25`, `mass: 0.8`
+- **Heavy Dossier Spring (Cards, Lineup Modals, Layout Transitions):**
+  - `stiffness: 220`, `damping: 22`, `mass: 1.1`
+- **Stamp Slam Recoil (Classified Stamps, Verdict Badges):**
+  - `scale: [1.6, 0.92, 1.05, 1.0]`, `rotate: [-8deg, -4deg, -5deg]`
+  - Duration: `0.45s`, `times: [0, 0.5, 0.8, 1.0]`
+- **Subtle Parallax Drift (Attract Mode / Ambient Floating):**
+  - `y: [-4, 4, -4]`, `rotate: [-0.5, 0.5, -0.5]`
+  - `transition: { duration: 6, repeat: Infinity, ease: "easeInOut" }`
+
+### 8.3 Core Kickass Animation Modules
+
+1. **3D Cursor-Tracking Card Tilt (`useMotionValue`, `useTransform`, `useSpring`)**:
+   - Pinned evidence cards track cursor/touch coordinates in real-time.
+   - Calculates 3D rotation (`rotateX`, `rotateY`) up to `±8deg` with a dynamic linear gradient specular highlight that shifts across the card surface as the angle changes.
+2. **Biometric Laser Scan & Fingerprint Pulse**:
+   - The biometric fingerprint graphics embedded in the **"O"** glyphs feature a sweeping glowing crimson laser line (`background: linear-gradient(180deg, transparent, rgba(158, 35, 47, 0.8), transparent)`) cycling smoothly on hover and idle.
+3. **Forensic "Stamp Slam" with Screen Shake**:
+   - When visitors interact or solve suspects, classified stamps (*"CONFIDENTIAL"*, *"BIAS TRAP"*, *"CASE SOLVED"*) slam into the surface with physics recoil and a subtle 2px canvas shake.
+4. **"The Suspect Lineup" Morphing Layouts (`layoutId` & AnimatePresence)**:
+   - Clicking any suspect smoothly expands their dossier card with shared layout transitions.
+   - Incorrect red herring choices trigger a quick horizontal shake (`x: [-6, 6, -4, 4, 0]`) and a flashing amber "BIAS TRAP" overlay.
+   - Identifying the true culprit triggers a dramatic spotlight zoom, RFID cloner wireframe reveal, and crimson evidence confetti bursts.
+5. **Live LifeCon Bias Meter Dynamic Chart Springs**:
+   - Progress bars smoothly inflate using Framer Motion springs (`scaleX: 0 -> value`, `transition: { type: "spring", bounce: 0.2, duration: 1.2 }`).
+   - Percentages count up dynamically using animated numbers.
+6. **Ambient Booth Attract Mode (15s Inactivity Trigger)**:
+   - Transitions into a living museum exhibit:
+     - Searchlight cone sweeps across the obsidian board.
+     - Evidence tags flutter gently.
+     - Pulsing interactive badge: *"🚨 Tap or Move to Investigate"*.
+     - Instant cancellation on mouse move, keypress, or touch.
+
+
+

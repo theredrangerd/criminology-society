@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+:root {
+  /* Official Design System Tokens */
+  --bg-main: #090a0d;
+  --surface-card: #fcfaf4;
+  --surface-card-alt: #f7f3e8;
+  --accent-crimson: #7e1923;
+  --accent-crimson-dark: #5a1017;
+  --accent-crimson-light: #9e232f;
+  --accent-crimson-glow: rgba(158, 35, 47, 0.4);
+  
+  --tape-base: rgba(212, 180, 141, 0.92);
+  --tape-dark: #b8966e;
+  --steel-gray: #8692a1;
+  --text-card-body: #4f131a;
+  --text-card-muted: #733139;
+  --card-border: #eedec9;
+
+  /* Font Families */
+  --font-display: 'Cinzel', serif;
+  --font-editorial: 'Playfair Display', serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: #eedec9;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Atmospheric Noise / Corkboard Vignette */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(126, 25, 35, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 85% 85%, rgba(90, 16, 23, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at center, transparent 0%, rgba(5, 6, 8, 0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* 3D Physical Parchment Card */
+.evidence-card-3d {
+  background: var(--surface-card);
+  color: var(--text-card-body);
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  box-shadow: 
+    6px 6px 0px var(--accent-crimson-dark),
+    12px 14px 28px rgba(0, 0, 0, 0.6);
+  position: relative;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transform-style: preserve-3d;
+}
+
+.evidence-card-3d:hover {
+  box-shadow: 
+    8px 8px 0px var(--accent-crimson),
+    16px 20px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* Realistic Kraft Masking Tape */
+.kraft-tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 130px;
+  height: 30px;
+  background: var(--tape-base);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  border-left: 2px dashed rgba(184, 150, 110, 0.6);
+  border-right: 2px dashed rgba(184, 150, 110, 0.6);
+  opacity: 0.95;
+  z-index: 20;
+  pointer-events: none;
+  backdrop-filter: blur(1px);
+}
+
+.kraft-tape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), transparent 40%, rgba(0,0,0,0.08) 90%);
+}
+
+/* Laser Scan Animation for Biometric Fingerprints */
+@keyframes laserSweep {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(180%);
+    opacity: 0;
+  }
+}
+
+.laser-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9e232f, #ff4d5e, #9e232f, transparent);
+  box-shadow: 0 0 8px #ff4d5e;
+  animation: laserSweep 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* Rubber Stamp Styling */
+.rubber-stamp {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 3px solid var(--accent-crimson-light);
+  color: var(--accent-crimson-light);
+  padding: 4px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  letter-spacing: 0.12em;
+  mask-image: radial-gradient(circle, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.4) 100%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #5a1017;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7e1923;
+}

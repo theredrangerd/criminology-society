@@ -1,17 +1,32 @@
-# Criminology Society (CrimSoc)
+# React + TypeScript + Vite
 
-Official interactive showcase and recruitment platform for the Criminology Society at LifeCon 2026.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## 🔍 Features
-- **Classified Evidence Board UI**: Tactile 3D cards, kraft masking tape pins, and obsidian/crimson forensic aesthetic.
-- **The Suspect Lineup**: Interactive 30-second cognitive bias experiment revealing how the "Halo Effect" skews criminal profiling.
-- **LifeCon Live Bias Meter**: Real-time aggregate statistics tracking visitor deductions across the day.
-- **Ambient Booth Attract Mode**: Interactive screensaver designed for event booth displays.
-- **Tactile Sound FX**: Forensic audio cues with corner mute controls.
+Currently, two official plugins are available:
 
-## 🏛️ Logistics
-- **Where**: Math 203
-- **When**: Tuesdays 12:45 – 1:15 PM
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🛠️ Tech Stack
-- Vanilla HTML5 / CSS3 / Modern JavaScript (Zero heavy dependencies for maximum speed and crisp rendering)
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
+
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
