@@ -44,7 +44,7 @@ export const LogisticsBadge: React.FC = () => {
             <div>
               <span className="font-mono text-[10px] text-[#733139] uppercase font-bold tracking-wider block">WHEN</span>
               <span className="font-display font-black text-lg sm:text-xl text-[#7e1923] tracking-wide block">TUESDAYS 12:45 – 1:15 PM</span>
-              <span className="text-[11px] sm:text-xs text-[#4f131a] block">Lunchtime weekly briefing</span>
+              <span className="text-[11px] sm:text-xs text-[#4f131a] block">Lunchtime Weekly Meetings</span>
             </div>
           </div>
         </div>

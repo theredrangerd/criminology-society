@@ -44,8 +44,8 @@ export const App: React.FC = () => {
       {/* LifeCon Idle Attract Mode */}
       <AttractMode />
 
-      {/* Main Investigation Board Canvas with Expansive Edge Gutters */}
-      <main className="w-full max-w-[1440px] mx-auto px-8 sm:px-14 md:px-20 lg:px-28 xl:px-36 py-6 md:py-12 relative z-10 flex flex-col items-center">
+      {/* Main Investigation Board Canvas with Dynamic Fluid Edge Gutters */}
+      <main className="main-canvas">
         {/* Hero Masthead with Biometric Typography & Rubber Stamp */}
         <HeroMasthead />
 
@@ -54,7 +54,7 @@ export const App: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="bento-board w-full mt-6"
+          className="bento-board"
         >
           {/* Bento Tile 1: Case Brief (What is CrimSoc?) - 7 Cols */}
           <motion.div variants={itemVariants} className="bento-7 flex w-full">
@@ -83,7 +83,7 @@ export const App: React.FC = () => {
         </motion.div>
 
         {/* Footer Dossier Stamp */}
-        <footer className="mt-28 mb-16 pt-10 border-t border-[#7e1923]/40 text-center space-y-3 w-full max-w-4xl relative z-10">
+        <footer className="footer-dossier space-y-3">
           <div className="inline-block px-4 py-1 rounded-full bg-[#7e1923]/10 border border-[#7e1923]/30 mb-1">
             <p className="font-mono text-xs text-[#8692a1] uppercase tracking-widest">
               CRIMINOLOGY SOCIETY • EXHIBITION FILE #CS-LIFECON-2026
