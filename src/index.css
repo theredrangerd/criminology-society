@@ -271,6 +271,8 @@ body::before {
 .footer-dossier {
   margin-top: 5rem;
   margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 2rem;
   border-top: 1px solid rgba(126, 25, 35, 0.4);
   text-align: center;
