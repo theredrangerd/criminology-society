@@ -64,13 +64,17 @@ export const SuspectCard: React.FC<SuspectCardProps> = ({
       {/* Avatar Area */}
       <div
         className={[
-          'flex items-center justify-center text-5xl pt-5 pb-3 relative',
-          guiltyCelebrate ? 'bg-[#7e1923]/10' : 'bg-[#eedec9]/40',
+          'flex items-center justify-center relative overflow-hidden',
+          'h-40 sm:h-44',
+          guiltyCelebrate ? 'bg-[#7e1923]/10' : 'bg-[#eedec9]/30',
         ].join(' ')}
       >
-        <span role="img" aria-label={suspect.archetype}>
-          {suspect.emoji}
-        </span>
+        <img
+          src={`${import.meta.env.BASE_URL}suspects/${suspect.image}`}
+          alt={suspect.archetype}
+          className="h-full w-full object-contain object-bottom"
+          draggable={false}
+        />
 
         {/* Dossier number badge */}
         <span className="absolute top-2 left-2 font-mono text-[9px] text-[#9e232f] bg-[#9e232f]/10 border border-[#9e232f]/30 rounded px-1.5 py-0.5 font-bold tracking-wider">

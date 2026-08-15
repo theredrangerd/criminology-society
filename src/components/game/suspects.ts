@@ -14,6 +14,7 @@ export interface Suspect {
   stereotypeTag: string; // bias label shown on verdict
   isGuilty: boolean;
   emoji: string;
+  image: string;         // portrait filename under /suspects/
   color: string;         // accent color for verdict state
 }
 
@@ -27,7 +28,8 @@ export const SUSPECTS: Suspect[] = [
     clue: '',
     stereotypeTag: 'APPEARANCE BIAS',
     isGuilty: false,
-    emoji: '🧥',
+    emoji: '🤘',
+    image: 'rebel.jpg',
     color: '#b45309',
   },
   {
@@ -40,6 +42,7 @@ export const SUSPECTS: Suspect[] = [
     stereotypeTag: 'TECH STEREOTYPE BIAS',
     isGuilty: false,
     emoji: '🎧',
+    image: 'hacker.jpg',
     color: '#b45309',
   },
   {
@@ -52,6 +55,7 @@ export const SUSPECTS: Suspect[] = [
     stereotypeTag: 'CLASS BIAS',
     isGuilty: false,
     emoji: '🧹',
+    image: 'janitor.jpg',
     color: '#b45309',
   },
   {
@@ -64,6 +68,7 @@ export const SUSPECTS: Suspect[] = [
     stereotypeTag: 'APPEARANCE BIAS',
     isGuilty: false,
     emoji: '😎',
+    image: 'streetwear.jpg',
     color: '#b45309',
   },
   {
@@ -76,6 +81,7 @@ export const SUSPECTS: Suspect[] = [
     stereotypeTag: 'HALO EFFECT',
     isGuilty: true,
     emoji: '🕴️',
+    image: 'scholar.jpg',
     color: '#7e1923',
   },
 ];
