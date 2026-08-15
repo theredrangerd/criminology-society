@@ -55,16 +55,25 @@ export const OfficerContacts: React.FC = () => {
         </p>
 
         {/* 5 Officers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
           {OFFICERS.map((officer) => {
             const isCopied = copiedId === officer.id;
             return (
-              <div 
+              <button 
                 key={officer.id}
-                className="flex items-center justify-between p-3 rounded-xl bg-[#eedec9]/40 border border-[#eedec9] hover:border-[#7e1923]/40 transition-colors group"
+                type="button"
+                onClick={() => handleCopy(officer.email, officer.id)}
+                title={`Click to copy ${officer.email}`}
+                className={`w-full text-left flex items-center justify-between p-3 rounded-xl border transition-all cursor-pointer select-none group active:scale-[0.98] ${
+                  isCopied
+                    ? 'bg-[#7e1923]/15 border-[#7e1923] shadow-inner'
+                    : 'bg-[#eedec9]/40 border-[#eedec9] hover:bg-[#eedec9]/70 hover:border-[#7e1923]/50 hover:shadow-sm'
+                }`}
               >
                 <div className="flex items-center gap-2.5 overflow-hidden">
-                  <div className="p-2 rounded-lg bg-[#7e1923]/10 text-[#7e1923] shrink-0">
+                  <div className={`p-2 rounded-lg transition-colors shrink-0 ${
+                    isCopied ? 'bg-[#7e1923] text-[#eedec9]' : 'bg-[#7e1923]/10 text-[#7e1923] group-hover:bg-[#7e1923]/20'
+                  }`}>
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="truncate">
@@ -78,19 +87,20 @@ export const OfficerContacts: React.FC = () => {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => handleCopy(officer.email, officer.id)}
-                  title="Copy email to clipboard"
-                  className="p-2 rounded-lg bg-[#fcfaf4] hover:bg-[#7e1923] text-[#7e1923] hover:text-[#fcfaf4] border border-[#eedec9] transition-all shrink-0 ml-2 shadow-sm"
+                <div
+                  className={`p-2 rounded-lg border transition-all shrink-0 ml-2 shadow-sm ${
+                    isCopied
+                      ? 'bg-green-700 text-white border-green-800'
+                      : 'bg-[#fcfaf4] text-[#7e1923] group-hover:bg-[#7e1923] group-hover:text-[#fcfaf4] border-[#eedec9]'
+                  }`}
                 >
                   {isCopied ? (
-                    <Check className="w-4 h-4 text-green-700" />
+                    <Check className="w-4 h-4 text-white" />
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}
-                </button>
-              </div>
+                </div>
+              </button>
             );
           })}
         </div>

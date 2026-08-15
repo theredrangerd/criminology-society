@@ -96,11 +96,14 @@ body::before {
 /* Realistic Kraft Masking Tape */
 .kraft-tape {
   position: absolute;
-  top: -14px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%) rotate(-1deg);
-  width: 130px;
-  height: 30px;
+  min-width: 140px;
+  width: max-content;
+  max-width: 85%;
+  padding: 0 16px;
+  height: 24px;
   background: var(--tape-base);
   box-shadow: 0 2px 6px rgba(0,0,0,0.35);
   border-left: 2px dashed rgba(184, 150, 110, 0.6);
@@ -109,6 +112,7 @@ body::before {
   z-index: 20;
   pointer-events: none;
   backdrop-filter: blur(1px);
+  white-space: nowrap;
 }
 
 .kraft-tape::after {
