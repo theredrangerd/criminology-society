@@ -104,6 +104,61 @@ class AudioEngine {
     });
   }
 
+  // ── Minigame Verdict Sounds ────────────────────────────────────────────
+
+  // Triumphant arpeggio for correct suspect identification (Case Solved)
+  public playVerdictChime() {
+    if (this.isMuted) return;
+    this.initCtx();
+    if (!this.ctx) return;
+
+    const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+    notes.forEach((freq, index) => {
+      if (!this.ctx) return;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime + index * 0.1);
+
+      gain.gain.setValueAtTime(0.1, this.ctx.currentTime + index * 0.1);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + index * 0.1 + 0.35);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(this.ctx.currentTime + index * 0.1);
+      osc.stop(this.ctx.currentTime + index * 0.1 + 0.35);
+    });
+  }
+
+  // Dissonant descending buzz for wrong guess (Bias Trap)
+  public playBiasTrap() {
+    if (this.isMuted) return;
+    this.initCtx();
+    if (!this.ctx) return;
+
+    const notes = [440, 415.3, 392, 349.23]; // A4, Ab4, G4, F4 — descending dissonant
+    notes.forEach((freq, index) => {
+      if (!this.ctx) return;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime + index * 0.09);
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.6, this.ctx.currentTime + index * 0.09 + 0.18);
+
+      gain.gain.setValueAtTime(0.07, this.ctx.currentTime + index * 0.09);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + index * 0.09 + 0.18);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(this.ctx.currentTime + index * 0.09);
+      osc.stop(this.ctx.currentTime + index * 0.09 + 0.18);
+    });
+  }
+
   // Tape Peel / Paper Shuffle
   public playPaperShuffle() {
     if (this.isMuted) return;

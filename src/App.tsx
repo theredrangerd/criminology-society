@@ -3,7 +3,7 @@ import { type Variants, motion } from 'framer-motion';
 import { HeroMasthead } from './components/HeroMasthead';
 import { WhatIsCrimSoc } from './components/WhatIsCrimSoc';
 import { LogisticsBadge } from './components/LogisticsBadge';
-import { GamePlaceholder } from './components/GamePlaceholder';
+import { SuspectLineup } from './components/game/SuspectLineup';
 import { ForensicHighlights } from './components/ForensicHighlights';
 import { OfficerContacts } from './components/OfficerContacts';
 import { SoundToggle } from './components/SoundToggle';
@@ -76,9 +76,9 @@ export const App: React.FC = () => {
             <ForensicHighlights />
           </motion.div>
 
-          {/* Bento Tile 5: Suspect Lineup Mini-Game Slot - 12 Cols */}
+          {/* Bento Tile 5: Suspect Lineup Mini-Game — 12 Cols */}
           <motion.div variants={itemVariants} className="bento-12 flex w-full">
-            <GamePlaceholder />
+            <SuspectLineup />
           </motion.div>
         </motion.div>
 
